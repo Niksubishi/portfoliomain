@@ -1,15 +1,40 @@
+import { Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import Hero from "./components/Hero";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
+import ProjectArticle from "./components/ProjectArticle";
 import styles from "./App.module.css";
 
-function App() {
+function HomePage() {
   return (
     <div className={styles.app}>
       <Hero />
       <Skills />
       <Projects />
     </div>
+  );
+}
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
+function App() {
+  return (
+    <>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/project/:id" element={<ProjectArticle />} />
+      </Routes>
+    </>
   );
 }
 
