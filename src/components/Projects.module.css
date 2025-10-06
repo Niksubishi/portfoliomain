@@ -1,19 +1,44 @@
 .projects {
-  text-align: center;
-  margin: 4rem 0;
+  margin: 2rem 0;
 }
 
 .title {
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
   letter-spacing: 2px;
+  text-align: center;
 }
 
-.list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-  width: 100%;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 900px;
   margin: 0 auto;
+  padding: 0 2rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.cardWrapper {
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.cardWrapper.dimmed {
+  filter: brightness(0.4);
+}
+
+.cardWrapper.highlighted {
+  filter: brightness(1.1);
+  transform: translateY(-4px);
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

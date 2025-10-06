@@ -5,6 +5,7 @@ function Skills() {
     { name: "HTML", icon: "/icons/html.svg" },
     { name: "CSS", icon: "/icons/css.svg" },
     { name: "JavaScript", icon: "/icons/js.svg" },
+    { name: "TypeScript", icon: "/icons/typescript.svg" },
     { name: "React", icon: "/icons/react.svg" },
     { name: "Tailwind", icon: "/icons/tailwind.svg" },
     { name: "Git", icon: "/icons/git.svg" },
