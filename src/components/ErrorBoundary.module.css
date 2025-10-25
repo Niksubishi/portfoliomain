@@ -1,0 +1,104 @@
+.errorContainer {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: #111;
+  color: #f1f1f1;
+}
+
+.errorContent {
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+}
+
+.errorContent h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #ff6b6b;
+}
+
+.errorContent p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.errorDetails {
+  margin: 2rem 0;
+  text-align: left;
+}
+
+.errorDetails summary {
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.errorDetails pre {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 0.9rem;
+  white-space: pre-wrap;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.retryButton,
+.reloadButton {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.retryButton {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.retryButton:hover {
+  background-color: #45a049;
+}
+
+.reloadButton {
+  background-color: #2196F3;
+  color: white;
+}
+
+.reloadButton:hover {
+  background-color: #1976D2;
+}
+
+@media (max-width: 768px) {
+  .errorContent h2 {
+    font-size: 1.5rem;
+  }
+
+  .errorContent p {
+    font-size: 1rem;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .retryButton,
+  .reloadButton {
+    width: 100%;
+    max-width: 200px;
+  }
+}

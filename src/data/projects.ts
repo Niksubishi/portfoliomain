@@ -1,10 +1,13 @@
+import { Project } from "../types";
 import project1 from "../assets/project1.jpg";
 import project2 from "../assets/project2.jpg";
 import project3 from "../assets/project3.jpg";
 import project4 from "../assets/project4.jpg";
+import project5 from "../assets/project5.jpg";
 
-const projects = [
+const projects: Project[] = [
   {
+    id: "fork-focus-blog",
     title: "Fork & Focus Restaurant Blog",
     description:
       "A blog platform for sharing restaurant reviews and recommendations from around the world. Built using HTML, CSS, and JavaScript, the site allows users to submit blog posts which are sent to an API, fetched, and dynamically displayed on the page. All design and development were completed by me, with a focus on clean UI, smooth user experience, and a mobile-friendly layout.",
@@ -22,6 +25,7 @@ const projects = [
     technologies: ["html", "css", "js", "figma"],
   },
   {
+    id: "yobid-auction-site",
     title: "YoBid Auction Site",
     description:
       "This project is an online auction platform where users can bid on various items, from electronics to collectibles. On registration users are given tokens they can spend and earn. The website allows users to create listings, place bids, and manage their auction history. This project is developed using Vite, Tailwind CSS, and JavaScript, and emphasizes a seamless and intuitive user experience.",
@@ -39,6 +43,7 @@ const projects = [
     technologies: ["html", "css", "js", "tailwind", "git"],
   },
   {
+    id: "ecomstore-sales",
     title: "Ecomstore Sales",
     description:
       "A type-safe online shopping platform built with React and TypeScript, featuring styled-components and fetching product data from the Noroff API. Users can browse products, view detailed information, add items to their cart, and complete a checkout process. Designed for a smooth and responsive user experience with modern development practices.",
@@ -56,6 +61,7 @@ const projects = [
     technologies: ["typescript", "react", "css"],
   },
   {
+    id: "social-media-website",
     title: "Social Media Website",
     description:
       "A modern social media web application enabling users to create, share, and interact through posts with robust authentication and design.",
@@ -71,6 +77,24 @@ const projects = [
     imageCaption:
       "Social media platform interface showing user posts and interaction features",
     technologies: ["html", "css", "js", "tailwind", "git"],
+  },
+  {
+    id: "holidaze-booking",
+    title: "Holidaze Accommodation Booking",
+    description:
+      "A comprehensive venue booking platform built with React that serves both customers and venue managers. Features dual-role user management, interactive maps, booking calendar system, and responsive design. Users can browse accommodations, make reservations, and manage bookings, while venue managers can create listings and monitor their properties.",
+    detailedDescription: [
+      "Holidaze is a modern accommodation booking platform developed as part of the Noroff FED2 Exam Project, designed to bridge the gap between travelers and accommodation providers. This sophisticated web application demonstrates advanced React development with a focus on user experience and comprehensive functionality for both customers and venue managers.",
+      "The platform features a dual-role user system where customers can browse venues with advanced search capabilities, make reservations through an integrated booking calendar, and manage their booking history. Venue managers have access to comprehensive tools for creating and managing property listings, uploading media, monitoring bookings, and configuring venue settings. The application includes interactive maps powered by Leaflet for location visualization and venue discovery.",
+      "Technical highlights include React 19.1.1 with modern hooks and context patterns, React Router DOM for seamless navigation, and Context API for efficient state management. The platform features a mobile-first responsive design with Tailwind CSS, WCAG accessibility compliance, performance optimization through lazy loading, and persistent user preferences including light/dark theme toggles.",
+      "Built using React 19.1.1 for component-based architecture, Tailwind CSS for utility-first styling, Leaflet for interactive mapping, and Vite for optimized build processes. The project emphasizes modular component architecture, role-based access control, custom hooks for reusable logic, and modern development practices. Deployed on Netlify with continuous deployment and optimized production builds.",
+    ],
+    image: project5,
+    repo: "https://github.com/Niksubishi/holidaze",
+    live: "https://holidaze-nikbishop.netlify.app",
+    imageCaption:
+      "Holidaze booking platform interface showing venue listings and booking functionality",
+    technologies: ["react", "tailwind", "js", "git"],
   },
 ];
 

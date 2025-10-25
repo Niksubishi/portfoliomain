@@ -4,14 +4,21 @@ import Hero from "./components/Hero";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import ProjectArticle from "./components/ProjectArticle";
+import SEO from "./components/SEO";
 import styles from "./App.module.css";
 
 function HomePage() {
   return (
     <div className={styles.app}>
+      <SEO />
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
       <Hero />
       <Skills />
-      <Projects />
+      <main id="main-content">
+        <Projects />
+      </main>
     </div>
   );
 }
@@ -33,6 +40,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/project/:id" element={<ProjectArticle />} />
+        <Route path="*" element={<div>Page not found</div>} />
       </Routes>
     </>
   );

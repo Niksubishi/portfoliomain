@@ -1,8 +1,24 @@
+@import './styles/animations.css';
+
 @font-face {
   font-family: "Jost";
   src: url("/Jost-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
+}
+
+/* CSS Custom Properties */
+:root {
+  --bg-primary: #111;
+  --bg-secondary: #1a1a1a;
+  --text-primary: #f1f1f1;
+  --text-secondary: #b3b3b3;
+  --accent-color: #4CAF50;
+  --border-color: #333;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --error-color: #ff6b6b;
+  --success-color: #4CAF50;
+  --warning-color: #ffa726;
 }
 
 * {
@@ -13,9 +29,21 @@
 
 body {
   font-family: "Jost", sans-serif;
-  background-color: #111;
-  color: #f1f1f1;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 a {
@@ -27,4 +55,32 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+/* Focus styles for accessibility */
+*:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* Skip navigation link */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 6px;
+  background: var(--accent-color);
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.skip-link:focus {
+  top: 6px;
+  opacity: 1;
+  visibility: visible;
 }

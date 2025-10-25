@@ -1,12 +1,13 @@
 import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import projects from "../data/projects";
+import SEO from "./SEO";
 import styles from "./ProjectArticle.module.css";
 
 function ProjectArticle() {
-  const { id } = useParams();
-  const project = projects[parseInt(id)];
-  const [copySuccess, setCopySuccess] = useState(false);
+  const { id } = useParams<{ id: string }>();
+  const project = projects.find(p => p.id === id);
+  const [copySuccess, setCopySuccess] = useState<boolean>(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -15,6 +16,7 @@ function ProjectArticle() {
   if (!project) {
     return (
       <div className={styles.container}>
+        <SEO title="Project Not Found" description="The requested project could not be found." />
         <h1>Project not found</h1>
         <Link to="/" className={styles.backLink}>← Back to Home</Link>
       </div>
@@ -31,7 +33,7 @@ function ProjectArticle() {
     }
   };
 
-  const formatDescription = (description) => {
+  const formatDescription = (description: string[]) => {
     if (Array.isArray(description)) {
       return description.map((paragraph, index) => (
         <p key={index} className={styles.paragraph}>{paragraph}</p>
@@ -44,6 +46,13 @@ function ProjectArticle() {
 
   return (
     <div className={styles.container}>
+      <SEO
+        title={project.title}
+        description={project.description}
+        image={project.image}
+        url={`https://nikbishop.dev/project/${project.id}`}
+        type="article"
+      />
       <Link to="/" className={styles.backLink}>← Back to Home</Link>
 
       <article className={styles.article}>
